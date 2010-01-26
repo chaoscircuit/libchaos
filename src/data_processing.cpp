@@ -158,6 +158,9 @@ void DP_runFFT(float* data, unsigned long nn) {
      * Some of this code was derived from work published here:
      *
      * http://www.ddj.com/cpp/199500857
+     * http://gfft.sourceforge.net/
+     * Used with permission from Volodymyr Myrnyy
+     *
      */
     unsigned long n, mmax, m, j, istep, i;
     float wtemp, wr, wpr, wpi, wi, theta;
