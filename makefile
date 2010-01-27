@@ -1,18 +1,13 @@
-COMPILERPATH = D:/Programs/Dev-Cpp/
-
 SRC       = src
 BUILD     = build
 
-WXLIBNAME = wxmsw28
 CPP       = g++.exe
 CC        = gcc.exe
-WINDRES   = "windres.exe"
+WINDRES   = windres.exe
 OBJ       = $(BUILD)/data_processing.o $(BUILD)/device_test.o $(BUILD)/libchaos.o $(BUILD)/usb_comm.o $(BUILD)/peaks.o
-LIBS      = -L"$(COMPILERPATH)Lib" libusb.a
-CXXINCS   = -I"$(COMPILERPATH)lib/gcc/mingw32/3.4.5/include" -I"$(COMPILERPATH)include/c++/3.4.5/backward" -I"$(COMPILERPATH)include/c++/3.4.5/mingw32" -I"$(COMPILERPATH)include/c++/3.4.5" -I"$(COMPILERPATH)include" -I"$(COMPILERPATH)" -I"$(COMPILERPATH)include/common/wx/msw" -I"$(COMPILERPATH)include/common/wx/generic" -I"$(COMPILERPATH)include/common/wx/html" -I"$(COMPILERPATH)include/common/wx/protocol" -I"$(COMPILERPATH)include/common/wx/xml" -I"$(COMPILERPATH)include/common/wx/xrc" -I"$(COMPILERPATH)include/common/wx" -I"$(COMPILERPATH)include/common"
-RCINCS    = --include-dir "$(COMPILERPATH)include/common"
+LIBS      = libusb.a
 BIN       = libchaos.a
-CXXFLAGS  = $(CXXINCS) -Wall -O2 -s
+CXXFLAGS  = -Wall -O2 -s
 LDFLAGS   = -s -Wl,--gc-sections -Os
 GPROF     = gprof.exe
 RM        = rm -f
