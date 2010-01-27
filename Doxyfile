@@ -236,7 +236,7 @@ WARN_LOGFILE           =
 
 
 
-INPUT                  = . USB\
+INPUT                  = src\
 
 
 INPUT_ENCODING         = UTF-8
