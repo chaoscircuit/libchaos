@@ -313,7 +313,7 @@ int libchaos_readPlot(int mdac_value) {
     last_fft++;
 
     // check to see if the FFT should run this time
-    if(last_fft > 20 || (current_mdac != last_mdac_value ) && FFT_ENABLED) {
+    if((last_fft > 20 || (current_mdac != last_mdac_value)) && FFT_ENABLED) {
         last_fft = 0;
         // get the data from the device
         ret_val = UC_sample(PLOT_DATA, NUM_FFT_PLOT_POINTS, mdac_value);

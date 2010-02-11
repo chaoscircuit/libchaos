@@ -88,9 +88,11 @@ int UC_close() {
     /** 
      * Close the USB device
      */
-    usb_release_interface(UC_device_handle, 0);
-    usb_close(UC_device_handle);
-	USB_DEV_CONNECTED = false;
+    if(USB_DEV_CONNECTED == true) {
+        usb_release_interface(UC_device_handle, 0);
+        usb_close(UC_device_handle);
+    }
+    USB_DEV_CONNECTED = false;
     return 0;
 }
 
@@ -142,7 +144,7 @@ int UC_reset() {
     
     if(UC_write(UC_OUT_BUF,8) != 8) {
         fprintf(DEBUG_FILE,"Write failed, checking for pending read.\n");
-        if(bytes_read = UC_read(UC_IN_BUF,1024) < 0) {
+        if((bytes_read = UC_read(UC_IN_BUF,1024)) < 0) {
             fprintf(DEBUG_FILE,"Read failed.\n");
             return -1;
         } else {
@@ -156,7 +158,7 @@ int UC_reset() {
         }
     }
     
-    if(bytes_read = UC_read(UC_IN_BUF,1) != 1) {
+    if((bytes_read = UC_read(UC_IN_BUF,1)) != 1) {
         fprintf(DEBUG_FILE,"Read failed after reset sent.\n");
         return -1;
     }

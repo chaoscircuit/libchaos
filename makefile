@@ -20,6 +20,9 @@ all: all-before "$(BUILD)/$(BIN)" all-after
 clean: clean-custom
 	$(RM) $(OBJ) "$(BUILD)/$(BIN)"
 
+all-before:
+	test -d $(BUILD) || mkdir $(BUILD)
+
 "$(BUILD)/$(BIN)": $(OBJ)
 	$(LINK) rcu "$(BUILD)/$(BIN)" $(OBJ)
 

@@ -37,7 +37,7 @@ int DT_testDevice() {
     fprintf(DEBUG_FILE,"Success\n");
 
     fprintf(DEBUG_FILE,"Read test...");
-    if(bytes_read = UC_read(buf,64) != 64) {
+    if((bytes_read = UC_read(buf,64)) != 64) {
         fprintf(DEBUG_FILE,"\nTest read failed. Read %d bytes.\n",bytes_read);
         if(UC_reset()) {
             return -1;
