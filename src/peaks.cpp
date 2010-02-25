@@ -117,7 +117,7 @@ int peaks_findPeaks(int* dst, int len, int* sample_data, int num_samples, int de
             if(current < max - delta) {
             
                 // Fit max to parabola
-                const float timestep = 1/float(LIBCHAOS_SAMPLE_FREQUENCY);
+                /*const float timestep = 1/float(LIBCHAOS_SAMPLE_FREQUENCY);
                 int xprev = DP_getX1(sample_data[max_position - 1]);
                 int xnext = DP_getX1(sample_data[max_position + 1]);
                 
@@ -125,7 +125,8 @@ int peaks_findPeaks(int* dst, int len, int* sample_data, int num_samples, int de
                 float bb = (4*current-xnext-3*xprev)/(2*timestep);
                 float cc = xprev;
                 
-                dst[max_count] = int(cc-bb*bb/(4*aa));
+                dst[max_count] = int(cc-bb*bb/(4*aa));*/
+				dst[max_count] = DP_getX1(sample_data[max_position]);
                 max_count++;
                 if(max_count >= len) {
                     // Stop looking for maxes
