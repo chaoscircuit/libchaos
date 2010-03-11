@@ -344,6 +344,14 @@ int libchaos_readPlot(int mdac_value) {
     return(ret_val);
 }
 
+void libchaos_refreshReturnMapPoints() {
+    /** 
+     * Causes the library to recollect return map data
+     */
+    PLOT_RETURN_MAP_NUM_POINTS = 0;
+    return;
+}
+
 int libchaos_getTriggerIndex() {
     /** 
      * Get the trigger index for the plot

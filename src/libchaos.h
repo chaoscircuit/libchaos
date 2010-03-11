@@ -53,6 +53,7 @@ int libchaos_setPeaksPerMDAC(int peaks_per_mdac);
 int libchaos_getReturnMap1Point(int* x1, int* x2, int index);
 int libchaos_getReturnMap2Point(int* x1, int* x2, int index);
 int libchaos_getNumReturnMapPoints();
+void libchaos_refreshReturnMapPoints();
 
 /* FFT */
 void libchaos_getFFTPlotPoint(float* val, int index);
