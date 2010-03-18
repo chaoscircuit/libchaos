@@ -39,7 +39,7 @@ int peaks_initCache(int peaks_per_mdac) {
     PEAKS_SAMPLES = (int*)malloc(PEAKS_NUM_SAMPLES*sizeof(int));
     
     // mark as cache initialized
-    return((int)PEAKS_CACHE);
+    return((int)(PEAKS_CACHE != 0));
 }
 
 int peaks_isCacheHit(int mdac_value) {
