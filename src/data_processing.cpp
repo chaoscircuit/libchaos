@@ -5,7 +5,7 @@
 
 #include "data_processing.h"
 
-FILE* DP_CSV;
+FILE * DP_CSV;
 
 int DP_getX1(int data_point) {
     /** 
@@ -34,7 +34,7 @@ int DP_newCSV(char* filename) {
      *
      * Deletes existing file if it exists    
      */
-    return (int)(DP_CSV = fopen(filename,"w"));
+    return (int)((DP_CSV = fopen(filename,"w")) != 0);
 }
 
 void DP_appendToCSV(int* src_data, int length, int mdac_value) {
