@@ -6,7 +6,7 @@
 #ifndef LIBCHAOS_H
 #define LIBCHAOS_H
 
-#define LIBCHAOS_VERSION 1006
+#define LIBCHAOS_VERSION 1007
 
 // sampling frequency in Hz
 #define LIBCHAOS_SAMPLE_FREQUENCY 60*1200

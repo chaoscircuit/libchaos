@@ -14,8 +14,8 @@
 #include "libchaos.h"
 
 /* the device's vendor and product id */
-#define MY_VID 0x0945
-#define MY_PID 0x7777
+#define MY_VID 0x04D8
+#define MY_PID 0xFC47
 
 /* the device's endpoints */
 #define EP_IN 0x81
